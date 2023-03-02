@@ -7,7 +7,7 @@ const UseAuth = ()=>{
 
 const LoginRequired = ()=>{
     const isAuth = UseAuth();
-    return isAuth?<Outlet/>: <Navigate to="" />
+    return isAuth?<Outlet/>: <Navigate to="/home" />
 }
 const LogoutRequired = ()=>{
     const isAuth = UseAuth();

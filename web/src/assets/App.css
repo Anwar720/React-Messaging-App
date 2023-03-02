@@ -434,7 +434,9 @@ html[data-theme="light"]{
 /* .message-input:hover,.message-input:active,.message-input:focus{
   width:80%;
 } */
-
+.full-width{
+  width:100%;
+}
 .message-input input{
   padding:0.5rem 1rem;
   background:transparent;
@@ -537,7 +539,7 @@ html[data-theme="light"]{
   left:0;
   z-index: 100;
   background-color: var(--background-green);
-  transform: translateX(-40rem);
+  transform: translateX(-100rem);
   transition: 0.6s ease-in-out;
   display:flex;
   flex-direction: column;
@@ -658,7 +660,7 @@ html[data-theme="light"]{
 }
 
 
-@media  (max-width: 650px) or (max-height:700){
+@media (max-width: 800px), (max-height:700){
   .App{
     grid-template-columns: 1fr;
   }
@@ -667,6 +669,7 @@ html[data-theme="light"]{
   }
   .active-chat .chat-container{
     display:grid;
+    
   }
   .contact-options{
     display:block;
@@ -678,7 +681,7 @@ html[data-theme="light"]{
       display:none;
   }
 }
-@media  (max-width: 830px){
+@media   (max-width: 830px){
   .auth-container{
     min-height: 100vh;
     overflow-y: auto;

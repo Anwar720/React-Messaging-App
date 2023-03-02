@@ -21,12 +21,22 @@ export const Login = (props)=>{
         return
     }
     const submitLogin = ()=>{
+        // alert('loging attempt')
         const form = document.querySelector('.signinForm')
+        let email = form.querySelector('#login-email')
+        let password = form.querySelector('#login-pass')
         const formData = {
-            email:form.querySelector('#login-email').value,
-            password:form.querySelector('#login-pass').value
+            email:email.value,
+            password:password.value
         }
-        fetch('http://localhost:5500/login' , {
+        // if(!email.value)
+        //     email.style.borderBottom = '1px solid red'
+        // if(!password.value || !password.value.length)
+        //     password.style.borderBottom = '1px solid red'
+        // if(!email.value || password.value)
+        //     return 
+        // fetch('http://localhost:5500/login' , {
+        fetch('http://192.168.0.6:5500/login' , {
             method: "POST",
             headers: {
                 'Content-Type':'application/json'

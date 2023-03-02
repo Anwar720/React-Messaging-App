@@ -113,7 +113,7 @@ export const ContactList = (props)=>{
                                             <div className="user-name">{contact.name}</div>
                                             <div >
                                                 {
-                                                    <i onClick={(e)=>acceptContact(e,contact.sender,contact.name)} className="confirm-contact-btn fa-solid fa-circle-check"></i>
+                                                    <i onClick={(e)=>acceptContact(e,contact.sender,contact.name)} className="confirm-contact-btn fa-solid fa-circle-check full-width"></i>
                                                 }
                                             </div>
                                         </div>

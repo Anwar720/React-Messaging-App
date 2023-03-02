@@ -88,11 +88,13 @@ function App() {
       date: `${d.toDateString().substring(4)} - ${d.toLocaleTimeString()}`,
       message:msg
     }
+
     setMessages(prevState => {
       let tmp = Object.assign({}, prevState)
       tmp[activeChat.chat] = prevState[activeChat.chat]?[...prevState[activeChat.chat],msgObject]:[msgObject]                    
       return tmp; 
     })
+    
     socket.emit('newMessage',msgObject,activeChat.chat);
   }
 

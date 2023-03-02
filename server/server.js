@@ -55,7 +55,7 @@ io.on('connection',(socket)=>{
     })
     socket.on('get-suggested-contacts',async(token)=>{
         const uid = await verifyIdToken(token)
-        console.log('get suggested contacts')
+        console.log('get suggested contacts',uid)
         socket.emit('suggested-contacts',await getSuggestedContacts(),
                                         await getIncomingContactRequests(uid),
                                         await getPendingContactRequests(uid))
@@ -75,7 +75,9 @@ io.on('connection',(socket)=>{
     })
 })
 
-
+app.get('/',(req,res)=>{
+    res.send('Welcome!')
+})
 //  Handle POST Requests
 app.post('/login',async (req,res)=>{
     const token = await loginUser(req.body)
